@@ -32,7 +32,7 @@
         <img class="img-rounded" src="{{$employee->emp_picture }}">
 
         <label class="radio-inline">
-          <input type="radio" name="e__choice" value="{{$employee->id}}">{{$employee->emp_name}}  -  {{$employee->emp_position}} - ID: {{$employee->id}}
+          <input type="radio" name="e__choice" value="{{$employee->id}}">{{$employee->emp_name}}  -  {{$employee->emp_position}}
 
 
       @endif
@@ -48,7 +48,7 @@
 
           <img src="{{$employee->emp_picture }}">
           <label class="radio-inline">
-            <input type="radio" name="e__choice" value="{{$employee->id}}">{{$employee->emp_name}}  -  {{$employee->emp_position}} - ID: {{$employee->id}}
+            <input type="radio" name="e__choice" value="{{$employee->id}}">{{$employee->emp_name}}  -  {{$employee->emp_position}}
 
         @endif
       @endforeach
@@ -60,16 +60,16 @@
         <hr>
         <p><br />
 
-          <img src="{{$employee->emp_picture }}">
+          <img src="{{$employee->emp_picture}}">
           <label class="radio-inline">
-            <input type="radio" name="e__choice" value="{{$employee->id}}">{{$employee->emp_name}}  -  {{$employee->emp_position}} - ID: {{$employee->id}}
+            <input type="radio" name="e__choice" value="{{$employee->id}}">{{$employee->emp_name}}  -  {{$employee->emp_position}}
 
         @endif
       @endforeach
 
 
     </div>
-    <div class="well well-sm" style="width:330px; text-align:center;" name="voteRadio">
+    <div id="voteRadio" class="well well-sm" style="width:330px; text-align:center;">
     <label class="radio-inline">
       <input type="radio" name="rating" value="1">1
     </label>
@@ -87,30 +87,38 @@
       </label>
       </div>
 <br />
+<br />
+  <div id="btnSubmit">
     <input type="submit" class="btn btn-success" value="Гласувай" id="btnSubmit">
+  </div>
 <br />
   </form>
 </div>
 <script>
-$(function() {
+$(function selectProcedure() {
+  $('#voteRadio').hide();
+  //$('#btnSubmit').hide();
     $('input[name="p__choice"]').on('click', function() {
 
         if ($(this).val() == 'Маникюр') {
-            $('voteRadio').hide();
-            $('#manicure').show();
+            $('#manicure').fadeIn('slow');
             $('#pedicure').hide();
             $('#hairstyle').hide();
+            $('#voteRadio').show();
+
         }
         else if ($(this).val() == 'Фризьорски услуги') {
-            $('#hairstyle').show();
+            $('#hairstyle').fadeIn('slow');
             $('#manicure').hide();
             $('#pedicure').hide();
+            $('#voteRadio').show();
 
         }
         else if ($(this).val() == 'Педикюр') {
-            $('#pedicure').show();
+            $('#pedicure').fadeIn('slow');
             $('#manicure').hide();
             $('#hairstyle').hide();
+            $('#voteRadio').show();
         }
         else {
             $('#textboxes').hide();

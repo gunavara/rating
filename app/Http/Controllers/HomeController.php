@@ -7,19 +7,29 @@ use App\Employees;
 use App\Procedures;
 use Validator;
 use DB;
+use Illuminate\Support\Carbon;
+
+
+
+
 class HomeController extends Controller
 {
+
+
     public function home(){
-      return view('home');
+      $currentTime = Carbon::now();
+      $currentTime = new Carbon();
+      return view('home')->with('currentTime', $currentTime);
     }
     public function rate(){
+      $currentTime = Carbon::now();
+      $currentTime = new Carbon();
       $employees = Employees::all();
       $procedures = Procedures::all();
-      return view('rate')->with('employees', $employees)->with('procedures', $procedures);
+      return view('rate')->with('employees', $employees)->with('procedures', $procedures)->with('currentTime', $currentTime);
     }
     public function test(){
-    $int = 5.322;
-    print $int;
+    print phpinfo();
     }
     public function saveVote(Request $request){
 
@@ -29,8 +39,6 @@ class HomeController extends Controller
       ]);
 
       if ($validator->fails()){
-        #$error = "Възникна грешка, опитайте отново";
-        #return view('error')->with('error',$error);
         return "ERROR";
       }
       $emp_id = $request->input('e__choice');
@@ -42,9 +50,11 @@ class HomeController extends Controller
       return Redirect::to('/');
     }
     public function results(){
+      $currentTime = Carbon::now();
+      $currentTime = new Carbon();
       $employees = Employees::all();
 
-      return view('results')->with('employees', $employees);
+      return view('results')->with('employees', $employees)->with('currentTime', $currentTime);
     }
 
 

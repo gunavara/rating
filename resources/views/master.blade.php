@@ -31,6 +31,11 @@
           <li><a href="{{URL::to('/')}}">Начало</a></li>
           <li><a href="{{URL::to('/rate')}}">Оценяване</a></li>
           <li><a href="{{URL::to('/results')}}">Резултати</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-brand">{{$currentTime}}</li>
+
         </ul>
       </div>
     </nav>
