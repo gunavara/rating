@@ -3,7 +3,7 @@
 
 <h3>
 HOME PAGE
-{{$currentTime}}
+TO DO
 
 </h3>
 @endsection
