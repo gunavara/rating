@@ -1,9 +1,17 @@
 @extends('master')
 @section('content')
 
-<h3>
-HOME PAGE
-TO DO
 
-</h3>
+    <div class="row">
+        <div class="container">
+
+
+
+
+
+        </div>
+    </div>
+
+
+
 @endsection

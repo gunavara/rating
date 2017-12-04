@@ -1,0 +1,67 @@
+//.procedure{
+//  display:none;
+//}
+
+.manicure{
+  background:#CCC;
+}
+.pedicure{
+  background:#0d3625;
+}
+.hairstyle{
+  background:#1b6d85;
+}
+
+.employee{
+  float:left;
+  width:33%;
+  height:300px;
+  text-align: center;
+  padding:10px;
+
+  vertical-align: bottom;
+  margin-bottom:50px;
+  & input[type='radio']{
+    display:none;
+  }
+}
+
+.rating-widget {
+
+  overflow:   visible;
+  padding:    10px;
+  position:   relative;
+  width:      100%;
+  height:     58px;
+  float:left;
+}
+.vote-holder{
+  width:100%;
+  height:100px;
+  text-align: center;
+  float:left;
+}
+.vote-button{
+  font-size:24px!important;
+  padding:10px 150px!important;
+  color:#FFF;
+  background-color:#981a8e;
+  border-color:#b649bf;
+}
+.choose-procedure{
+  width:100%;
+  text-align:center;
+  margin-bottom:50px;
+}
+.all-employees{
+  display:table;
+  width:100%;
+  text-align: center;
+}
+.procedure{
+  float:left;
+  width:100%;
+}
+.procedure p{
+  color:#FFF;
+}
