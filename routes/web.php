@@ -19,3 +19,5 @@ Route::post('/selectprocedure', 'HomeController@selectprocedure');
 Route::post('/savevote', 'HomeController@saveVote');
 Route::get('/results', 'HomeController@results');
 Route::view('/error', 'error');
+
+Route::post('/process', 'VoteController@process');

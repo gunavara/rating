@@ -9,7 +9,7 @@ use Validator;
 use DB;
 use Illuminate\Support\Carbon;
 
-
+//this does nothing
 
 
 class HomeController extends Controller
@@ -28,14 +28,12 @@ class HomeController extends Controller
       $procedures = Procedures::all();
       return view('rate')->with('employees', $employees)->with('procedures', $procedures)->with('currentTime', $currentTime);
     }
-    public function test(){
-    print phpinfo();
-    }
+
     public function saveVote(Request $request){
 
       $validator = Validator::make($request->all(),[
         'e__choice' => 'required',
-        'rating' => 'required',
+        'rating' => 'required',''
       ]);
 
       if ($validator->fails()){
@@ -49,8 +47,12 @@ class HomeController extends Controller
       $employees->save();
       return Redirect::to('/');
     }
+
+
+
+
     public function results(){
-      $currentTime = Carbon::now();
+
       $currentTime = new Carbon();
       $employees = Employees::all();
 
